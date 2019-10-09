@@ -28,7 +28,7 @@ resource "azurerm_snapshot" "pwc-test" {
 
   create_option       = "Copy"
 
-  source_uri          =  ${var.sourceuri}
+  source_uri          =  "${var.source_uri}"
 
 }
 
