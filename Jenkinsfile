@@ -13,6 +13,7 @@ stages
      stage('terraform init') {
             steps {
                  sh "terraform init -input=false"
+		  echo "shanmukna $source_uri"
                
             }
         }
