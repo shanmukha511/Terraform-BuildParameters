@@ -28,7 +28,7 @@ resource "azurerm_snapshot" "pwc-test" {
 
   create_option       = "Copy"
 
-  source_uri          = "/subscriptions/a8a59231-c575-45fb-8e16-2b4c5b6a2271/resourceGroups/pwc-test/providers/Microsoft.Compute/disks/WindowsVM_OsDisk_1_180acba49f3b44b0ba61e36fd78e4d18"
+  source_uri          =  "${var.source_uri}"
 
 }
 
