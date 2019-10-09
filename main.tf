@@ -19,7 +19,7 @@ resource "azurerm_resource_group" "pwc-test" {
 
 resource "azurerm_snapshot" "pwc-test" {
  
-  name                = "abc"
+  name                = "${var.snapshot_name}"
   location            = "${azurerm_resource_group.pwc-test.location}"
   resource_group_name = "${azurerm_resource_group.pwc-test.name}"
 
