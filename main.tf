@@ -10,21 +10,18 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "pwc-test" {
 
- name     = "pwc-test"
-
- location = "eastus"
+ name     = "${var.resource_group_name}"
+ location = "${var.location}"
 
 }
 
  
 
 resource "azurerm_snapshot" "pwc-test" {
-
-  name                = "pwc-snapshot_Windows"
-
-  location            = "eastus"
-
-  resource_group_name = "pwc-test"
+ 
+  name                = "${var.snapshot_name}"
+  location            = "${azurerm_resource_group.pwc-test.location}"
+  resource_group_name = "${azurerm_resource_group.pwc-test.name}"
 
   create_option       = "Copy"
 
