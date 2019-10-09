@@ -13,6 +13,9 @@ stages
      stage('terraform init') {
             steps {
 		  
+		     wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: '123ADS', var: 'SECRET']]]) {
+        echo env['SECRET'];
+    }
 		  
                  sh "terraform init -input=false"
 		 
