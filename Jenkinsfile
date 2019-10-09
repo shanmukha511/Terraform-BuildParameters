@@ -13,8 +13,8 @@ stages
      stage('terraform init') {
             steps {
 		  
-		     wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: '123ADS', var: 'SECRET']]]) {
-        echo env['SECRET'];
+		     wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: 'a8a59231-c575-45fb-8e16-2b4c5b6a2271', var: 'AZURE_SUBSCRIPTION_ID']]]) {
+        echo env['AZURE_SUBSCRIPTION_ID'];
     }
 		  
                  sh "terraform init -input=false"
