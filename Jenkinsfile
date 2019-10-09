@@ -12,8 +12,10 @@ stages
     }
      stage('terraform init') {
             steps {
-                 sh "terraform init -input=false"
+		  
 		  echo "shanmukha $sourceuri"
+                 sh "terraform init -input=false"
+		 
                
             }
         }
